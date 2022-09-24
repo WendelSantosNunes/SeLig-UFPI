@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href={% static 'css/form-excluir.css'%}>
+    <title>Se Liga UFPI</title>
+
+{% endblock links %} 
+
+{% block main %}
+    <main class="container main-container">
+        <div  class="container-content">
+            <div class="title">
+                <h3>Excluir registro</h3>
+            </div>
+            <div>
+                {% if request.user.is_authenticated %}
+
+                    <form action="" method="POST" enctype="multipart/form-data">
+
+                        <p>Desejar excluir a publicação {{object}}</p>
+
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        
+                        <div class="button-submit">
+                            <button type="submit">Excluir</button>
+                        </div>
+                    </form>    
+                {% else %}
+
+                    <h3>login ???</h3>
+                    
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock main %}
