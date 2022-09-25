@@ -136,7 +136,8 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-
+if not DEBUG:
+    STATIC_ROOT = ''
 # Login
 
 LOGIN_REDIRECT_URL = 'home'
