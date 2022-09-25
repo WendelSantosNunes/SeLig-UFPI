@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn --chdir FromThePath FromThePath.wsgi
+web: sh -c 'cd папка_проекта && gunicorn приложение_с_wsgi.wsgi --log-file=-'
