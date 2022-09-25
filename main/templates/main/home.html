@@ -373,7 +373,6 @@
 
         const options = {
             method: 'GET',
-            //body: JSON.stringify(dados),
             data: {
                 pesquisa: indice,
             },
@@ -389,11 +388,6 @@
 
         fetch('pesquisa',options).then(data => data).then(response => response)
     }
-    
-    {% comment %} document.querySelector('#estado').addEventListener(
-        'click',estado, false
-    );  {% endcomment %}
-
 
 </script>
 {% endif %}
